@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+runs/
+trips.db
+.pytest_cache/
+
+# kept locally, not published
+assigment.pdf
+ASSIGNMENT.md
+PROGRESS.md

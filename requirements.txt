@@ -1,0 +1,7 @@
+langgraph
+langchain-google-genai
+pydantic
+rich
+python-dotenv
+httpx
+pytest

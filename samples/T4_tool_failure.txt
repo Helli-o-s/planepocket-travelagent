@@ -1,0 +1,152 @@
+Agentic Travel Planner · trip d3f9d0ec · trace: runs/d3f9d0ec.jsonl
+LIVE real-time API · CLIMATE historical averages, not a forecast · MOCK simulated provider, not real prices/availability · ESTIMATE 
+computed approximation · UNAVAILABLE source failed
+  parsed
+  → search_flights(date=2026-12-15, destination=GOI, origin=DEL, passengers=2) UNAVAILABLE error: search_flights provider unavailable 
+(simulated outage)
+  → search_flights(destination=DEL, date=2026-12-18, passengers=2, origin=GOI) UNAVAILABLE error: search_flights provider unavailable 
+(simulated outage)
+  → search_hotels(tier=mid-range, guests=2, city=Goa) MOCK 4 results
+  → search_attractions(interests=['beaches', 'food'], city=Goa) MOCK 19 results
+  → search_restaurants(city=Goa) MOCK 10 results
+  → get_weather(city=Goa, end_date=2026-12-18, start_date=2026-12-15) CLIMATE historical average (not a forecast)
+  → search_flights(date=2026-12-15, origin=DEL, destination=GOI, passengers=2) UNAVAILABLE error: search_flights provider unavailable 
+(simulated outage) (cached)
+  → search_flights(destination=DEL, date=2026-12-18, passengers=2, origin=GOI) UNAVAILABLE error: search_flights provider unavailable 
+(simulated outage) (cached)
+  agent: ### Research Summary & Recommended Options
+
+#### ✈️ Flights
+* **Status**: Flight search provider is currently unavailable (simulated outage). As a result, exact flight options and IDs could not be 
+retrieved. 
+* **Recommendation**: Please allocate a standard estimated budget for return flights from D
+  composed
+  ✓ validator passed: 0 errors, 2 warnings; covered ₹9,600 of ₹45,000
+┌───────────────────────────────────────────────────────────────── Trip ──────────────────────────────────────────────────────────────────┐
+│ Delhi → Goa · 15 Dec 2026 – 18 Dec 2026 (4 days) · 2 adults, 0 children · budget ₹45,000                                                │
+│ assumption: No year given; using the next upcoming dates (15 Dec 2026).                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────── Summary ────────────────────────────────────────────────────────────────┐
+│ A 4-day trip to Goa focusing on beautiful beaches, rich food culture, and historical sights, staying at Candolim Palms Resort.          │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+Flights DEL → GOI on 2026-12-15 UNAVAILABLE: error: search_flights provider unavailable (simulated outage)
+Flights GOI → DEL on 2026-12-18 UNAVAILABLE: error: search_flights provider unavailable (simulated outage)
+                                             Hotels (tier=mid-range, guests=2, city=Goa) MOCK                                              
+┌────────────┬────────────────────────┬────────────────┬───────────┬───────────┬───────┬────────┬───────────────────────────┬─────────────┐
+│ ID         │ Name                   │ Area           │ Tier      │ Per night │ Rooms │ Rating │ Amenities                 │ Δ stay vs ★ │
+├────────────┼────────────────────────┼────────────────┼───────────┼───────────┼───────┼────────┼───────────────────────────┼─────────────┤
+│ H-GOA-05   │ Colva Sands Retreat    │ Colva-Benaulim │ mid-range │ ₹2,600    │ 1     │ 4.0    │ wifi, ac, pool            │ -₹1,800     │
+│ H-GOA-04   │ Panjim Riverside Hotel │ Panaji         │ mid-range │ ₹2,800    │ 1     │ 4.1    │ wifi, ac, breakfast, lift │ -₹1,200     │
+│ ★ H-GOA-03 │ Candolim Palms Resort  │ Candolim       │ mid-range │ ₹3,200    │ 1     │ 4.2    │ wifi, ac, pool, breakfast │ —           │
+│ H-GOA-06   │ Anjuna Cliff Stays     │ Anjuna-Vagator │ mid-range │ ₹3,600    │ 1     │ 4.3    │ wifi, ac, sea view        │ +₹1,200     │
+└────────────┴────────────────────────┴────────────────┴───────────┴───────────┴───────┴────────┴───────────────────────────┴─────────────┘
+                                           Day 1 · 2026-12-15 · Beaches and Coastal Exploration                                            
+┌─────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                   │ Why                                        │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼────────────────────────────────────────────┼────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 10:00–12:30 │ Calangute Beach (Calangute-Baga)           │ Explore the lively Calangute Beach to kick │ 19 min / ₹200     │ free        │
+│             │ Goa's busiest beach; shacks, lifeguards,   │ off the coastal getaway.                   │                   │             │
+│             │ lively in the evening.                     │                                            │                   │             │
+│ 13:30–15:30 │ Baga Beach water sports (Calangute-Baga)   │ Enjoy beach water sports at Baga Beach     │ -                 │ ₹3,000      │
+│             │ Parasailing, jet ski and banana boat       │ matching beach interests.                  │                   │             │
+│             │ rides.                                     │                                            │                   │             │
+│ 17:00–19:00 │ Vagator Beach (Anjuna-Vagator)             │ Watch the sunset at the scenic Vagator     │ 23 min / ₹200     │ free        │
+│             │ Red-cliff beach, quieter than Baga; good   │ Beach red-cliff overlook.                  │                   │             │
+│             │ sunset spot.                               │                                            │                   │             │
+└─────────────┴────────────────────────────────────────────┴────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast included at Candolim Palms Resort. · lunch: Baga Shoreline Shack — Seafood and Goan curries by the
+shore. · dinner: Anjuna Garden Kitchen — Goan and continental dinner near Vagator.
+  💤 Rest at Candolim Palms Resort in the late afternoon before heading out for sunset.
+  • Wear light cotton clothing and comfortable footwear.
+  • Stay hydrated as temperatures average around 34 degrees Celsius.
+                                              Day 2 · 2026-12-16 · Culture and Heritage Walk                                               
+┌─────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                   │ Why                                        │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼────────────────────────────────────────────┼────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:30–11:30 │ Fontainhas Latin Quarter walk (Panaji)     │ Walk through the colourful Portuguese-era  │ 31 min / ₹200     │ free        │
+│             │ Colourful Portuguese-era lanes, bakeries   │ lanes of Fontainhas Latin Quarter.         │                   │             │
+│             │ and cafés; best explored on foot.          │                                            │                   │             │
+│ 17:00–18:00 │ Mandovi River sunset cruise (Panaji)       │ Relax on a Mandovi River sunset cruise     │ -                 │ ₹1,000      │
+│             │ One-hour boat cruise with Goan folk music  │ with music and dance.                      │                   │             │
+│             │ and dance.                                 │                                            │                   │             │
+└─────────────┴────────────────────────────────────────────┴────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Resort breakfast. · lunch: Fontainhas Bakery Café — Enjoy bakes and sandwiches at Fontainhas Bakery Café. · 
+dinner: Panjim Thali House — Traditional Goan fish and veg thalis in Panaji.
+  💤 Relax at the resort pool during the midday heat between 13:00 and 15:30.
+  • Bring a hat and sunscreen for the walking tour.
+  • Camera recommended for colorful heritage houses.
+                                               Day 3 · 2026-12-17 · Spices and Local Flavors                                               
+┌─────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                   │ Why                                        │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼────────────────────────────────────────────┼────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:30–12:30 │ Spice plantation tour with lunch (Ponda)   │ Guided walk through a Ponda spice farm     │ 97 min / ₹809     │ ₹1,200      │
+│             │ Guided walk through a spice farm followed  │ combining food interest and nature.        │                   │             │
+│             │ by a Goan buffet lunch.                    │                                            │                   │             │
+│ 14:30–16:00 │ Fort Aguada & Lighthouse (Candolim)        │ Explore the historic Fort Aguada and       │ 97 min / ₹809     │ ₹100        │
+│             │ 17th-century Portuguese fort and           │ lighthouse overlooking the estuary.        │                   │             │
+│             │ lighthouse above the Mandovi estuary.      │                                            │                   │             │
+└─────────────┴────────────────────────────────────────────┴────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Resort breakfast. · lunch: hotel/casual — Authentic Goan buffet lunch included in the spice plantation tour.
+· dinner: Candolim Pure Veg Bhojanalaya — North and South Indian vegetarian dinner in Candolim.
+  💤 Rest during the drive back from Ponda to Candolim.
+  • Wear comfortable walking shoes for the spice plantation tour.
+                                          Day 4 · 2026-12-18 · Historical Churches and Departure                                           
+┌─────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                   │ Why                                        │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼────────────────────────────────────────────┼────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:00–10:00 │ Basilica of Bom Jesus (Old Goa)            │ Visit the UNESCO-listed Basilica of Bom    │ 57 min / ₹436     │ free        │
+│             │ UNESCO-listed baroque church holding St.   │ Jesus in Old Goa.                          │                   │             │
+│             │ Francis Xavier's relics.                   │                                            │                   │             │
+└─────────────┴────────────────────────────────────────────┴────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Resort breakfast. · lunch: Old Goa Pilgrim Canteen — Simple Indian meal at Old Goa before heading to the 
+airport. · dinner: hotel/casual — In-flight meal or casual dinner.
+  💤 Rest at the hotel prior to checkout.
+  • Keep luggage packed before morning sightseeing.
+  • Ensure arrival at the airport well ahead of your return flight.
+Weather CLIMATE: avg 20.7–33.9°C, 0.0 mm rain/day, rainy days 0%
+                     Cost breakdown (computed, not model-generated)                      
+┌─────────────────┬─────────────────────────────────────────────────┬────────┬──────────┐
+│ Category        │ Item                                            │ Amount │ Source   │
+├─────────────────┼─────────────────────────────────────────────────┼────────┼──────────┤
+│ accommodation   │ Candolim Palms Resort × 3 nights × 1 room(s)    │ ₹9,600 │ MOCK     │
+│ local_transport │ Day 1: taxi Candolim → Calangute-Baga           │ ₹200   │ ESTIMATE │
+│ activities      │ Day 1: Baga Beach water sports × 2              │ ₹3,000 │ MOCK     │
+│ local_transport │ Day 1: taxi Calangute-Baga → Anjuna-Vagator     │ ₹200   │ ESTIMATE │
+│ local_transport │ Day 1: taxi back to hotel                       │ ₹205   │ ESTIMATE │
+│ meals           │ Day 1 breakfast (estimate) × 2                  │ ₹400   │ ESTIMATE │
+│ meals           │ Day 1 lunch: Baga Shoreline Shack × 2           │ ₹1,400 │ MOCK     │
+│ meals           │ Day 1 dinner: Anjuna Garden Kitchen × 2         │ ₹1,200 │ MOCK     │
+│ local_transport │ Day 2: taxi Candolim → Panaji                   │ ₹200   │ ESTIMATE │
+│ activities      │ Day 2: Mandovi River sunset cruise × 2          │ ₹1,000 │ MOCK     │
+│ local_transport │ Day 2: taxi back to hotel                       │ ₹200   │ ESTIMATE │
+│ meals           │ Day 2 lunch: Fontainhas Bakery Café × 2         │ ₹700   │ MOCK     │
+│ meals           │ Day 2 dinner: Panjim Thali House × 2            │ ₹900   │ MOCK     │
+│ activities      │ Day 3: Spice plantation tour with lunch × 2     │ ₹1,200 │ MOCK     │
+│ local_transport │ Day 3: taxi Candolim → Ponda                    │ ₹809   │ ESTIMATE │
+│ activities      │ Day 3: Fort Aguada & Lighthouse × 2             │ ₹100   │ MOCK     │
+│ local_transport │ Day 3: taxi Ponda → Candolim                    │ ₹809   │ ESTIMATE │
+│ meals           │ Day 3 lunch (estimate) × 2                      │ ₹800   │ ESTIMATE │
+│ meals           │ Day 3 dinner: Candolim Pure Veg Bhojanalaya × 2 │ ₹600   │ MOCK     │
+│ local_transport │ Day 4: taxi Candolim → Old Goa                  │ ₹436   │ ESTIMATE │
+│ local_transport │ Day 4: taxi back to hotel                       │ ₹436   │ ESTIMATE │
+│ meals           │ Day 4 lunch: Old Goa Pilgrim Canteen × 2        │ ₹400   │ MOCK     │
+│ meals           │ Day 4 dinner (estimate) × 2                     │ ₹1,000 │ ESTIMATE │
+│ contingency     │ 10% contingency                                 │ ₹2,580 │ ESTIMATE │
+└─────────────────┴─────────────────────────────────────────────────┴────────┴──────────┘
+  accommodation       ₹9,600  ██████████
+  meals               ₹7,400  ████████
+  activities          ₹5,300  ██████
+  local_transport     ₹3,495  ████
+  contingency         ₹2,580  ███
+  UNAVAILABLE search_flights: search_flights provider unavailable (simulated outage) — not included in the total
+  UNAVAILABLE search_flights: search_flights provider unavailable (simulated outage) — not included in the total
+  UNAVAILABLE round-trip flights not priced — total excludes intercity travel
+  Total ₹28,375 · budget ₹45,000 covers transport + accommodation: ₹9,600 → can't confirm: total excludes unavailable items
+warning: Round-trip flights are not both included; intercity transport cost is incomplete.
+warning: 194 min of travel on day 3; consider grouping nearby places.
+cannot satisfy: Flight search tool was unavailable; exact flight IDs and ticket prices could not be retrieved and verified automatically.
+LIVE real-time API · CLIMATE historical averages, not a forecast · MOCK simulated provider, not real prices/availability · ESTIMATE 
+computed approximation · UNAVAILABLE source failed
+Commands: flights · hotels · costs · plan · json · book (mock) · quit — anything else refines the trip.
+
+> Saved. Resume with: python main.py --resume d3f9d0ec

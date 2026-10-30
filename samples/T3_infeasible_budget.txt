@@ -1,0 +1,267 @@
+Agentic Travel Planner · trip cc7087c6 · trace: runs/cc7087c6.jsonl
+LIVE real-time API · CLIMATE historical averages, not a forecast · MOCK simulated provider, not real prices/availability · ESTIMATE 
+computed approximation · UNAVAILABLE source failed
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  parsed
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  → search_flights(passengers=2, date=2026-12-15, destination=Goa, origin=Indore) MOCK 4 results
+  → search_flights(destination=Indore, passengers=2, date=2026-12-19, origin=Goa) MOCK 4 results
+  → search_hotels(city=Goa, tier=mid-range, guests=2) MOCK 4 results
+  → search_attractions(city=Goa, interests=['beaches', 'history']) MOCK 19 results
+  → search_restaurants(city=Goa) MOCK 10 results
+  → get_weather(city=Goa, start_date=2026-12-15, end_date=2026-12-19) CLIMATE historical average (not a forecast)
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  → estimate_budget(flight_ids=['FL-IDR-GOI-20261215-1', 'FL-GOI-IDR-20261219-1'], travellers=2, nights=4, hotel_id=H-GOA-05) MOCK 
+flights+hotel = ₹26,500
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  agent: Here are the recommended options for your Goa trip based on your preferences:
+
+* **Flights:**
+  * Outbound: `FL-IDR-GOI-20261215-1` (Demo Airways, IDR to GOI, 15 Dec 2026, 1-stop)
+  * Return: `FL-GOI-IDR-20261219-1` (Demo Airways, GOI to IDR, 19 Dec 2026, 1-stop)
+* **Hotel:** `H-GOA-05` (Colva Sands
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  composed
+  ✓ validator replanning: 2 errors, 2 warnings; covered ₹43,904 of ₹5,000
+    ✗ Last activity ends too close to the 11:40 return flight.
+    ✗ The trip costs 43,904 INR, over the 5,000 budget by 38,904.
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  → search_flights(origin=Goa, destination=Indore, date=2026-12-19, passengers=2) MOCK 4 results (cached)
+  → search_hotels(guests=2, max_price_per_night=1000, city=Goa, tier=budget) MOCK empty: no hotels match; try another tier or a higher 
+price
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  → search_hotels(guests=2, tier=budget, max_price_per_night=2000, city=Goa) MOCK 2 results
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  → estimate_budget(nights=4, hotel_id=H-GOA-01, travellers=2, flight_ids=['FL-IDR-GOI-20261215-1', 'FL-GOI-IDR-20261219-2']) MOCK 
+flights+hotel = ₹23,100
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  agent: Here are the updated options to address the timing and budget feedback:
+
+* **Flights:**
+  * Outbound: `FL-IDR-GOI-20261215-1` (Demo Airways, departs 11:40, arrives 16:07)
+  * Return: `FL-GOI-IDR-20261219-2` (SkyMock, departs 15:25, arrives 17:22) — *Choosing this afternoon/evening return flight prov
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  composed
+  ✓ validator replanning: 1 errors, 2 warnings; covered ₹35,969 of ₹5,000
+    ✗ The trip costs 35,969 INR, over the 5,000 budget by 30,969.
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  → search_flights(date=2026-12-15, destination=Goa, passengers=1, origin=Indore) MOCK 4 results
+  → search_flights(origin=Goa, passengers=1, date=2026-12-19, destination=Indore) MOCK 4 results
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  → estimate_budget(flight_ids=['FL-IDR-GOI-20261215-1', 'FL-GOI-IDR-20261219-1'], nights=4, hotel_id=H-GOA-01, travellers=2) MOCK 
+flights+hotel = ₹21,700
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  agent: Here is the summary of the lowest-cost options available to get as close to the budget as possible while keeping proper flight 
+timing:
+
+* **Flights:**
+  * Outbound: `FL-IDR-GOI-20261215-1` (Demo Airways, departs 11:40, arrives 16:07) — INR 3,750 per person.
+  * Return: `FL-GOI-IDR-20261219-2` (SkyMo
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  composed
+  ✓ validator issues remain: 2 errors, 2 warnings; covered ₹36,866 of ₹5,000
+    ✗ Calangute Beach appears more than once.
+    ✗ The trip costs 36,866 INR, over the 5,000 budget by 31,866.
+┌───────────────────────────────────────────────────────────────── Trip ──────────────────────────────────────────────────────────────────┐
+│ Indore → Goa · 15 Dec 2026 – 19 Dec 2026 (5 days) · 2 adults, 0 children · budget ₹5,000                                                │
+│ assumption: No year given; using the next upcoming dates (15 Dec 2026).                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────── Summary ────────────────────────────────────────────────────────────────┐
+│ A 5-day cultural and beach itinerary covering highlights in North and Central Goa, staying at Calangute Backpacker Inn.                 │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                 Flights Indore → Goa on 2026-12-15 MOCK                                  
+┌─────────────────────────┬──────────────┬────────┬────────┬──────────┬───────┬────────────┬─────────────┐
+│ ID                      │ Airline      │ Depart │ Arrive │ Duration │ Stops │ Per person │ Δ trip vs ★ │
+├─────────────────────────┼──────────────┼────────┼────────┼──────────┼───────┼────────────┼─────────────┤
+│ FL-IDR-GOI-20261215-0   │ MockAir      │ 06:10  │ 08:07  │ 1h57     │ 0     │ ₹4,650     │ +₹1,800     │
+│ ★ FL-IDR-GOI-20261215-1 │ Demo Airways │ 11:40  │ 16:07  │ 4h27     │ 1     │ ₹3,750     │ —           │
+│ FL-IDR-GOI-20261215-2   │ SkyMock      │ 15:25  │ 17:22  │ 1h57     │ 0     │ ₹5,200     │ +₹2,900     │
+│ FL-IDR-GOI-20261215-3   │ TestJet      │ 20:50  │ 22:47  │ 1h57     │ 0     │ ₹5,200     │ +₹2,900     │
+└─────────────────────────┴──────────────┴────────┴────────┴──────────┴───────┴────────────┴─────────────┘
+                                 Flights Goa → Indore on 2026-12-19 MOCK                                  
+┌─────────────────────────┬──────────────┬────────┬────────┬──────────┬───────┬────────────┬─────────────┐
+│ ID                      │ Airline      │ Depart │ Arrive │ Duration │ Stops │ Per person │ Δ trip vs ★ │
+├─────────────────────────┼──────────────┼────────┼────────┼──────────┼───────┼────────────┼─────────────┤
+│ FL-GOI-IDR-20261219-0   │ MockAir      │ 06:10  │ 08:07  │ 1h57     │ 0     │ ₹5,600     │ +₹1,200     │
+│ FL-GOI-IDR-20261219-1   │ Demo Airways │ 11:40  │ 16:07  │ 4h27     │ 1     │ ₹4,300     │ -₹1,400     │
+│ ★ FL-GOI-IDR-20261219-2 │ SkyMock      │ 15:25  │ 17:22  │ 1h57     │ 0     │ ₹5,000     │ —           │
+│ FL-GOI-IDR-20261219-3   │ TestJet      │ 20:50  │ 22:47  │ 1h57     │ 0     │ ₹5,050     │ +₹100       │
+└─────────────────────────┴──────────────┴────────┴────────┴──────────┴───────┴────────────┴─────────────┘
+                                 Flights Indore → Goa on 2026-12-15 MOCK                                  
+┌─────────────────────────┬──────────────┬────────┬────────┬──────────┬───────┬────────────┬─────────────┐
+│ ID                      │ Airline      │ Depart │ Arrive │ Duration │ Stops │ Per person │ Δ trip vs ★ │
+├─────────────────────────┼──────────────┼────────┼────────┼──────────┼───────┼────────────┼─────────────┤
+│ FL-IDR-GOI-20261215-0   │ MockAir      │ 06:10  │ 08:07  │ 1h57     │ 0     │ ₹4,650     │ +₹1,800     │
+│ ★ FL-IDR-GOI-20261215-1 │ Demo Airways │ 11:40  │ 16:07  │ 4h27     │ 1     │ ₹3,750     │ —           │
+│ FL-IDR-GOI-20261215-2   │ SkyMock      │ 15:25  │ 17:22  │ 1h57     │ 0     │ ₹5,200     │ +₹2,900     │
+│ FL-IDR-GOI-20261215-3   │ TestJet      │ 20:50  │ 22:47  │ 1h57     │ 0     │ ₹5,200     │ +₹2,900     │
+└─────────────────────────┴──────────────┴────────┴────────┴──────────┴───────┴────────────┴─────────────┘
+                                 Flights Goa → Indore on 2026-12-19 MOCK                                  
+┌─────────────────────────┬──────────────┬────────┬────────┬──────────┬───────┬────────────┬─────────────┐
+│ ID                      │ Airline      │ Depart │ Arrive │ Duration │ Stops │ Per person │ Δ trip vs ★ │
+├─────────────────────────┼──────────────┼────────┼────────┼──────────┼───────┼────────────┼─────────────┤
+│ FL-GOI-IDR-20261219-0   │ MockAir      │ 06:10  │ 08:07  │ 1h57     │ 0     │ ₹5,600     │ +₹1,200     │
+│ FL-GOI-IDR-20261219-1   │ Demo Airways │ 11:40  │ 16:07  │ 4h27     │ 1     │ ₹4,300     │ -₹1,400     │
+│ ★ FL-GOI-IDR-20261219-2 │ SkyMock      │ 15:25  │ 17:22  │ 1h57     │ 0     │ ₹5,000     │ —           │
+│ FL-GOI-IDR-20261219-3   │ TestJet      │ 20:50  │ 22:47  │ 1h57     │ 0     │ ₹5,050     │ +₹100       │
+└─────────────────────────┴──────────────┴────────┴────────┴──────────┴───────┴────────────┴─────────────┘
+                                            Hotels (city=Goa, tier=mid-range, guests=2) MOCK                                             
+┌──────────┬────────────────────────┬────────────────┬───────────┬───────────┬───────┬────────┬───────────────────────────┬─────────────┐
+│ ID       │ Name                   │ Area           │ Tier      │ Per night │ Rooms │ Rating │ Amenities                 │ Δ stay vs ★ │
+├──────────┼────────────────────────┼────────────────┼───────────┼───────────┼───────┼────────┼───────────────────────────┼─────────────┤
+│ H-GOA-05 │ Colva Sands Retreat    │ Colva-Benaulim │ mid-range │ ₹2,600    │ 1     │ 4.0    │ wifi, ac, pool            │ +₹4,800     │
+│ H-GOA-04 │ Panjim Riverside Hotel │ Panaji         │ mid-range │ ₹2,800    │ 1     │ 4.1    │ wifi, ac, breakfast, lift │ +₹5,600     │
+│ H-GOA-03 │ Candolim Palms Resort  │ Candolim       │ mid-range │ ₹3,200    │ 1     │ 4.2    │ wifi, ac, pool, breakfast │ +₹7,200     │
+│ H-GOA-06 │ Anjuna Cliff Stays     │ Anjuna-Vagator │ mid-range │ ₹3,600    │ 1     │ 4.3    │ wifi, ac, sea view        │ +₹8,800     │
+└──────────┴────────────────────────┴────────────────┴───────────┴───────────┴───────┴────────┴───────────────────────────┴─────────────┘
+Hotels ({'guests': 2, 'max_price_per_night': 1000, 'city': 'Goa', 'tier': 'budget'}): empty: no hotels match; try another tier or a higher 
+price
+                         Hotels (guests=2, tier=budget, max_price_per_night=2000, city=Goa) MOCK                          
+┌────────────┬──────────────────────────┬────────────────┬────────┬───────────┬───────┬────────┬───────────┬─────────────┐
+│ ID         │ Name                     │ Area           │ Tier   │ Per night │ Rooms │ Rating │ Amenities │ Δ stay vs ★ │
+├────────────┼──────────────────────────┼────────────────┼────────┼───────────┼───────┼────────┼───────────┼─────────────┤
+│ ★ H-GOA-01 │ Calangute Backpacker Inn │ Calangute-Baga │ budget │ ₹1,400    │ 1     │ 3.6    │ wifi      │ —           │
+│ H-GOA-02   │ Baga Breeze Guesthouse   │ Calangute-Baga │ budget │ ₹1,900    │ 1     │ 3.9    │ wifi, ac  │ +₹2,000     │
+└────────────┴──────────────────────────┴────────────────┴────────┴───────────┴───────┴────────┴───────────┴─────────────┘
+                                              Day 1 · 2026-12-15 · Arrival and Beach Evening                                               
+┌─────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                   │ Why                                        │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼────────────────────────────────────────────┼────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 18:00–20:30 │ Calangute Beach (Calangute-Baga)           │ Relaxing first evening at Calangute Beach  │ -                 │ free        │
+│             │ Goa's busiest beach; shacks, lifeguards,   │ near the hotel.                            │                   │             │
+│             │ lively in the evening.                     │                                            │                   │             │
+└─────────────┴────────────────────────────────────────────┴────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Aboard flight or airport before departure · lunch: hotel/casual — Airport or en route to hotel · dinner: 
+Baga Shoreline Shack — Seafood and Goan curries at Baga Shoreline Shack
+  💤 At Calangute Backpacker Inn after check-in and dinner
+  • Pack light cotton clothing for warm weather
+  • Keep hydrated
+                                         Day 2 · 2026-12-16 · Anjuna Vagator Heritage and Markets                                          
+┌─────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                   │ Why                                        │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼────────────────────────────────────────────┼────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 10:00–12:30 │ Anjuna Flea Market (Anjuna-Vagator)        │ Wednesday Anjuna Flea Market for shopping  │ 23 min / ₹200     │ free        │
+│             │ Weekly Wednesday market with crafts,       │ and culture.                               │                   │             │
+│             │ clothes and snack stalls.                  │                                            │                   │             │
+│ 13:30–15:30 │ Vagator Beach (Anjuna-Vagator)             │ Vagator Beach red-cliff scenic views.      │ -                 │ free        │
+│             │ Red-cliff beach, quieter than Baga; good   │                                            │                   │             │
+│             │ sunset spot.                               │                                            │                   │             │
+│ 15:45–17:15 │ Chapora Fort (Anjuna-Vagator)              │ Chapora Fort historical site and sunset.   │ -                 │ free        │
+│             │ Ruined Portuguese hilltop fort; steep      │                                            │                   │             │
+│             │ uphill path, sweeping views over Vagator.  │                                            │                   │             │
+└─────────────┴────────────────────────────────────────────┴────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Local café near hotel · lunch: Anjuna Garden Kitchen — Goan and vegan bowls at Anjuna Garden Kitchen · 
+dinner: hotel/casual — Casual dining near Calangute
+  💤 Afternoon break at Vagator Beach
+  • Wear comfortable shoes for Chapora Fort walk
+                                          Day 3 · 2026-12-17 · Old Goa History and Panaji Capital                                          
+┌─────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                   │ Why                                        │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼────────────────────────────────────────────┼────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 10:00–11:00 │ Basilica of Bom Jesus (Old Goa)            │ Basilica of Bom Jesus historical tour.     │ 60 min / ₹470     │ free        │
+│             │ UNESCO-listed baroque church holding St.   │                                            │                   │             │
+│             │ Francis Xavier's relics.                   │                                            │                   │             │
+│ 12:00–14:00 │ Fontainhas Latin Quarter walk (Panaji)     │ Fontainhas Latin Quarter walk in Panaji.   │ 36 min / ₹242     │ free        │
+│             │ Colourful Portuguese-era lanes, bakeries   │                                            │                   │             │
+│             │ and cafés; best explored on foot.          │                                            │                   │             │
+│ 17:00–18:00 │ Mandovi River sunset cruise (Panaji)       │ Mandovi River sunset cruise with Goan      │ -                 │ ₹1,000      │
+│             │ One-hour boat cruise with Goan folk music  │ culture.                                   │                   │             │
+│             │ and dance.                                 │                                            │                   │             │
+└─────────────┴────────────────────────────────────────────┴────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast near Calangute · lunch: Panjim Thali House — Traditional fish and veg thalis at Panjim Thali House
+· dinner: Fontainhas Bakery Café — Bakes and sandwiches at Fontainhas Bakery Café
+  💤 Mid-afternoon rest at Fontainhas café
+  • Sun protection recommended for walking tours
+                                               Day 4 · 2026-12-18 · Candolim and Fort Aguada                                               
+┌─────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                   │ Why                                        │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼────────────────────────────────────────────┼────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 10:00–11:30 │ Fort Aguada & Lighthouse (Candolim)        │ Fort Aguada historical tour and            │ 19 min / ₹200     │ ₹100        │
+│             │ 17th-century Portuguese fort and           │ lighthouse.                                │                   │             │
+│             │ lighthouse above the Mandovi estuary.      │                                            │                   │             │
+│ 13:00–14:00 │ Dona Paula Viewpoint (Dona Paula)          │ Dona Paula viewpoint scenic river-sea      │ 34 min / ₹225     │ free        │
+│             │ Promontory where the Mandovi and Zuari     │ meeting point.                             │                   │             │
+│             │ rivers meet the sea.                       │                                            │                   │             │
+└─────────────┴────────────────────────────────────────────┴────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast near hotel · lunch: Dona Paula Seaside Grill — Grills and curries at Dona Paula Seaside Grill · 
+dinner: Candolim Pure Veg Bhojanalaya — North and South Indian veg at Candolim Pure Veg Bhojanalaya
+  💤 Afternoon downtime at Dona Paula
+  • Bring camera for scenic views at Fort Aguada
+                                                      Day 5 · 2026-12-19 · Departure                                                       
+┌─────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                   │ Why                                        │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼────────────────────────────────────────────┼────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:00–11:30 │ Calangute Beach (Calangute-Baga)           │ Final morning stroll along Calangute beach │ -                 │ free        │
+│             │ Goa's busiest beach; shacks, lifeguards,   │ before heading to airport.                 │                   │             │
+│             │ lively in the evening.                     │                                            │                   │             │
+└─────────────┴────────────────────────────────────────────┴────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Early breakfast at hotel · lunch: hotel/casual — Lunch near Goa Airport before departure · dinner: 
+hotel/casual — Aboard return flight or upon arrival in Indore
+  💤 Relax at hotel before airport transfer
+  • Ensure check-out is complete and luggage is packed with time to spare before the 15:25 flight.
+Weather CLIMATE: avg 20.6–33.8°C, 0.0 mm rain/day, rainy days 0%
+                      Cost breakdown (computed, not model-generated)                       
+┌─────────────────┬──────────────────────────────────────────────────┬─────────┬──────────┐
+│ Category        │ Item                                             │ Amount  │ Source   │
+├─────────────────┼──────────────────────────────────────────────────┼─────────┼──────────┤
+│ transport       │ Flight Demo Airways IDR→GOI 2026-12-15 11:40 × 2 │ ₹7,500  │ MOCK     │
+│ transport       │ Flight SkyMock GOI→IDR 2026-12-19 15:25 × 2      │ ₹10,000 │ MOCK     │
+│ accommodation   │ Calangute Backpacker Inn × 4 nights × 1 room(s)  │ ₹5,600  │ MOCK     │
+│ transport       │ Airport → hotel taxi                             │ ₹539    │ ESTIMATE │
+│ transport       │ Hotel → airport taxi                             │ ₹539    │ ESTIMATE │
+│ meals           │ Day 1 dinner: Baga Shoreline Shack × 2           │ ₹1,400  │ MOCK     │
+│ local_transport │ Day 2: taxi Calangute-Baga → Anjuna-Vagator      │ ₹200    │ ESTIMATE │
+│ local_transport │ Day 2: taxi back to hotel                        │ ₹200    │ ESTIMATE │
+│ meals           │ Day 2 breakfast (estimate) × 2                   │ ₹400    │ ESTIMATE │
+│ meals           │ Day 2 lunch: Anjuna Garden Kitchen × 2           │ ₹1,200  │ MOCK     │
+│ meals           │ Day 2 dinner (estimate) × 2                      │ ₹1,000  │ ESTIMATE │
+│ local_transport │ Day 3: taxi Calangute-Baga → Old Goa             │ ₹470    │ ESTIMATE │
+│ local_transport │ Day 3: taxi Old Goa → Panaji                     │ ₹242    │ ESTIMATE │
+│ activities      │ Day 3: Mandovi River sunset cruise × 2           │ ₹1,000  │ MOCK     │
+│ local_transport │ Day 3: taxi back to hotel                        │ ₹249    │ ESTIMATE │
+│ meals           │ Day 3 breakfast (estimate) × 2                   │ ₹400    │ ESTIMATE │
+│ meals           │ Day 3 lunch: Panjim Thali House × 2              │ ₹900    │ MOCK     │
+│ meals           │ Day 3 dinner: Fontainhas Bakery Café × 2         │ ₹700    │ MOCK     │
+│ activities      │ Day 4: Fort Aguada & Lighthouse × 2              │ ₹100    │ MOCK     │
+│ local_transport │ Day 4: taxi Calangute-Baga → Candolim            │ ₹200    │ ESTIMATE │
+│ local_transport │ Day 4: taxi Candolim → Dona Paula                │ ₹225    │ ESTIMATE │
+│ local_transport │ Day 4: taxi back to hotel                        │ ₹302    │ ESTIMATE │
+│ meals           │ Day 4 breakfast (estimate) × 2                   │ ₹400    │ ESTIMATE │
+│ meals           │ Day 4 lunch: Dona Paula Seaside Grill × 2        │ ₹1,300  │ MOCK     │
+│ meals           │ Day 4 dinner: Candolim Pure Veg Bhojanalaya × 2  │ ₹600    │ MOCK     │
+│ meals           │ Day 5 breakfast (estimate) × 2                   │ ₹400    │ ESTIMATE │
+│ meals           │ Day 5 lunch (estimate) × 2                       │ ₹800    │ ESTIMATE │
+│ contingency     │ 10% contingency                                  │ ₹3,687  │ ESTIMATE │
+└─────────────────┴──────────────────────────────────────────────────┴─────────┴──────────┘
+  transport          ₹18,578  ██████████████
+  meals               ₹9,500  ███████
+  accommodation       ₹5,600  ████
+  contingency         ₹3,687  ███
+  local_transport     ₹2,088  ██
+  activities          ₹1,100  █
+  Total ₹40,553 · budget ₹5,000 covers whole trip: ₹36,866 → OVER budget
+warning: Calangute Backpacker Inn is budget, you asked for mid-range.
+error: Calangute Beach appears more than once.
+warning: Nothing in the plan matches the interest 'history'.
+error: The trip costs 36,866 INR, over the 5,000 budget by 31,866.
+cannot satisfy: The requested budget of INR 5,000 is mathematically impossible to meet as flights and budget accommodation alone cost over 
+INR 23,100.
+LIVE real-time API · CLIMATE historical averages, not a forecast · MOCK simulated provider, not real prices/availability · ESTIMATE 
+computed approximation · UNAVAILABLE source failed
+Commands: flights · hotels · costs · plan · json · book (mock) · quit — anything else refines the trip.
+
+> Saved. Resume with: python main.py --resume cc7087c6

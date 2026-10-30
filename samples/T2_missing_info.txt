@@ -1,0 +1,186 @@
+Agentic Travel Planner · trip 51e3714d · trace: runs/51e3714d.jsonl
+LIVE real-time API · CLIMATE historical averages, not a forecast · MOCK simulated provider, not real prices/availability · ESTIMATE 
+computed approximation · UNAVAILABLE source failed
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  parsed
+? How many adults (and children, if any) are travelling? What is your total budget? What are your travel dates (start and end)?
+> C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  parsed
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  → search_flights(destination=Goa, origin=Mumbai, passengers=2, date=2027-01-10) MOCK 4 results
+  → search_flights(destination=Mumbai, passengers=2, origin=Goa, date=2027-01-13) MOCK 4 results
+  → search_hotels(tier=None, guests=2, city=Goa) MOCK 8 results
+  → search_attractions(interests=['beaches'], city=Goa) MOCK 19 results
+  → search_restaurants(city=Goa) MOCK 10 results
+  → get_weather(start_date=2027-01-10, city=Goa, end_date=2027-01-13) CLIMATE historical average (not a forecast)
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  → estimate_budget(flight_ids=['FL-BOM-GOI-20270110-1', 'FL-GOI-BOM-20270113-1'], hotel_id=H-GOA-04, nights=3, travellers=2) MOCK 
+flights+hotel = ₹20,300
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  agent: Here are the recommended options for your 4-day trip to Goa within your ₹40,000 budget:
+
+### Recommended Options & IDs
+* **Outbound Flight:** `FL-BOM-GOI-20270110-1` (Demo Airways, Mumbai to Goa, Jan 10, 11:40 - 15:34, 1-stop, ₹2,800/person)
+* **Return Flight:** `FL-GOI-BOM-20270113-1` (Demo Airways
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  composed
+  ✓ validator replanning: 1 errors, 0 warnings; covered ₹34,565 of ₹40,000
+    ✗ 368 min of travel on day 3; pick a more central hotel or group nearby places.
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  → search_hotels(tier=mid-range, max_price_per_night=4000, city=Goa, guests=2) MOCK 4 results
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  → estimate_transport(from_place=Candolim Palms Resort, to_place=Calangute Beach, mode=taxi, travellers=2) ESTIMATE 19 min, ₹200
+  → estimate_transport(travellers=2, mode=taxi, to_place=Fort Aguada & Lighthouse, from_place=Candolim Palms Resort) ESTIMATE 0 min, ₹0
+  → estimate_budget(flight_ids=['FL-BOM-GOI-20270110-1', 'FL-GOI-BOM-20270113-1'], travellers=2, nights=3, hotel_id=H-GOA-03) MOCK 
+flights+hotel = ₹21,500
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  agent: To fix the excessive travel time on day 3, we have updated the hotel to a more central, beach-aligned location in Candolim, 
+keeping daily transit times short and grouping nearby northern beach attractions together.
+
+### Updated Recommended Options & IDs
+* **Outbound Flight:** `FL-BOM-GOI-20270110-1`
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  composed
+  ✓ validator passed: 0 errors, 0 warnings; covered ₹31,725 of ₹40,000
+┌───────────────────────────────────────────────────────────────── Trip ──────────────────────────────────────────────────────────────────┐
+│ Mumbai → Goa · 10 Jan 2027 – 13 Jan 2027 (4 days) · 2 adults, 0 children · budget ₹40,000                                               │
+│ assumption: No year given; using the next upcoming dates (10 Jan 2027).                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────── Summary ────────────────────────────────────────────────────────────────┐
+│ An optimized 4-day beach-focused trip to North Goa staying at Candolim Palms Resort, featuring visits to Calangute, Baga, Vagator, and  │
+│ Fort Aguada with minimal transit times, well within budget.                                                                             │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                 Flights Mumbai → Goa on 2027-01-10 MOCK                                  
+┌─────────────────────────┬──────────────┬────────┬────────┬──────────┬───────┬────────────┬─────────────┐
+│ ID                      │ Airline      │ Depart │ Arrive │ Duration │ Stops │ Per person │ Δ trip vs ★ │
+├─────────────────────────┼──────────────┼────────┼────────┼──────────┼───────┼────────────┼─────────────┤
+│ FL-BOM-GOI-20270110-0   │ MockAir      │ 06:10  │ 07:34  │ 1h24     │ 0     │ ₹4,000     │ +₹2,400     │
+│ ★ FL-BOM-GOI-20270110-1 │ Demo Airways │ 11:40  │ 15:34  │ 3h54     │ 1     │ ₹2,800     │ —           │
+│ FL-BOM-GOI-20270110-2   │ SkyMock      │ 15:25  │ 16:49  │ 1h24     │ 0     │ ₹3,600     │ +₹1,600     │
+│ FL-BOM-GOI-20270110-3   │ TestJet      │ 20:50  │ 22:14  │ 1h24     │ 0     │ ₹4,050     │ +₹2,500     │
+└─────────────────────────┴──────────────┴────────┴────────┴──────────┴───────┴────────────┴─────────────┘
+                                 Flights Goa → Mumbai on 2027-01-13 MOCK                                  
+┌─────────────────────────┬──────────────┬────────┬────────┬──────────┬───────┬────────────┬─────────────┐
+│ ID                      │ Airline      │ Depart │ Arrive │ Duration │ Stops │ Per person │ Δ trip vs ★ │
+├─────────────────────────┼──────────────┼────────┼────────┼──────────┼───────┼────────────┼─────────────┤
+│ FL-GOI-BOM-20270113-0   │ MockAir      │ 06:10  │ 07:34  │ 1h24     │ 0     │ ₹3,650     │ +₹1,000     │
+│ ★ FL-GOI-BOM-20270113-1 │ Demo Airways │ 11:40  │ 15:34  │ 3h54     │ 1     │ ₹3,150     │ —           │
+│ FL-GOI-BOM-20270113-2   │ SkyMock      │ 15:25  │ 16:49  │ 1h24     │ 0     │ ₹3,400     │ +₹500       │
+│ FL-GOI-BOM-20270113-3   │ TestJet      │ 20:50  │ 22:14  │ 1h24     │ 0     │ ₹3,450     │ +₹600       │
+└─────────────────────────┴──────────────┴────────┴────────┴──────────┴───────┴────────────┴─────────────┘
+                                                Hotels (tier=None, guests=2, city=Goa) MOCK                                                
+┌────────────┬──────────────────────────┬────────────────┬───────────┬───────────┬───────┬────────┬─────────────────────────┬─────────────┐
+│ ID         │ Name                     │ Area           │ Tier      │ Per night │ Rooms │ Rating │ Amenities               │ Δ stay vs ★ │
+├────────────┼──────────────────────────┼────────────────┼───────────┼───────────┼───────┼────────┼─────────────────────────┼─────────────┤
+│ H-GOA-01   │ Calangute Backpacker Inn │ Calangute-Baga │ budget    │ ₹1,400    │ 1     │ 3.6    │ wifi                    │ -₹5,400     │
+│ H-GOA-02   │ Baga Breeze Guesthouse   │ Calangute-Baga │ budget    │ ₹1,900    │ 1     │ 3.9    │ wifi, ac                │ -₹3,900     │
+│ H-GOA-08   │ Palolem Eco Huts         │ Palolem        │ budget    │ ₹2,200    │ 1     │ 4.0    │ sea view                │ -₹3,000     │
+│ H-GOA-05   │ Colva Sands Retreat      │ Colva-Benaulim │ mid-range │ ₹2,600    │ 1     │ 4.0    │ wifi, ac, pool          │ -₹1,800     │
+│ H-GOA-04   │ Panjim Riverside Hotel   │ Panaji         │ mid-range │ ₹2,800    │ 1     │ 4.1    │ wifi, ac, breakfast,    │ -₹1,200     │
+│            │                          │                │           │           │       │        │ lift                    │             │
+│ ★ H-GOA-03 │ Candolim Palms Resort    │ Candolim       │ mid-range │ ₹3,200    │ 1     │ 4.2    │ wifi, ac, pool,         │ —           │
+│            │                          │                │           │           │       │        │ breakfast               │             │
+│ H-GOA-06   │ Anjuna Cliff Stays       │ Anjuna-Vagator │ mid-range │ ₹3,600    │ 1     │ 4.3    │ wifi, ac, sea view      │ +₹1,200     │
+│ H-GOA-07   │ Aguada Grand Heritage    │ Candolim       │ luxury    │ ₹9,500    │ 1     │ 4.7    │ wifi, ac, pool,         │ +₹18,900    │
+│            │                          │                │           │           │       │        │ breakfast, spa, lift    │             │
+└────────────┴──────────────────────────┴────────────────┴───────────┴───────────┴───────┴────────┴─────────────────────────┴─────────────┘
+                                Hotels (tier=mid-range, max_price_per_night=4000, city=Goa, guests=2) MOCK                                 
+┌────────────┬────────────────────────┬────────────────┬───────────┬───────────┬───────┬────────┬───────────────────────────┬─────────────┐
+│ ID         │ Name                   │ Area           │ Tier      │ Per night │ Rooms │ Rating │ Amenities                 │ Δ stay vs ★ │
+├────────────┼────────────────────────┼────────────────┼───────────┼───────────┼───────┼────────┼───────────────────────────┼─────────────┤
+│ H-GOA-05   │ Colva Sands Retreat    │ Colva-Benaulim │ mid-range │ ₹2,600    │ 1     │ 4.0    │ wifi, ac, pool            │ -₹1,800     │
+│ H-GOA-04   │ Panjim Riverside Hotel │ Panaji         │ mid-range │ ₹2,800    │ 1     │ 4.1    │ wifi, ac, breakfast, lift │ -₹1,200     │
+│ ★ H-GOA-03 │ Candolim Palms Resort  │ Candolim       │ mid-range │ ₹3,200    │ 1     │ 4.2    │ wifi, ac, pool, breakfast │ —           │
+│ H-GOA-06   │ Anjuna Cliff Stays     │ Anjuna-Vagator │ mid-range │ ₹3,600    │ 1     │ 4.3    │ wifi, ac, sea view        │ +₹1,200     │
+└────────────┴────────────────────────┴────────────────┴───────────┴───────────┴───────┴────────┴───────────────────────────┴─────────────┘
+                                            Day 1 · 2027-01-10 · Arrival and Evening Beach Walk                                            
+┌─────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                   │ Why                                        │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼────────────────────────────────────────────┼────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 17:15–19:45 │ Calangute Beach (Calangute-Baga)           │ Arrive at the hotel, settle in, and enjoy  │ 19 min / ₹200     │ free        │
+│             │ Goa's busiest beach; shacks, lifeguards,   │ a lively first evening at nearby Calangute │                   │             │
+│             │ lively in the evening.                     │ Beach.                                     │                   │             │
+└─────────────┴────────────────────────────────────────────┴────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast before flight departure in Mumbai. · lunch: hotel/casual — In-flight meal or quick bite upon 
+landing at Goa airport. · dinner: Candolim Pure Veg Bhojanalaya — Delicious vegetarian dinner at Candolim Pure Veg Bhojanalaya near the 
+resort.
+  💤 Relax at Candolim Palms Resort after check-in and dinner.
+  • Wear comfortable clothing suitable for warm coastal weather.
+  • Keep hydrated as temperatures average around 33°C.
+                                           Day 2 · 2027-01-11 · North Goa Beaches & Water Sports                                           
+┌─────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                   │ Why                                        │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼────────────────────────────────────────────┼────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:30–11:30 │ Baga Beach water sports (Calangute-Baga)   │ Exciting water sports and beach time at    │ 19 min / ₹200     │ ₹3,000      │
+│             │ Parasailing, jet ski and banana boat       │ Baga Beach.                                │                   │             │
+│             │ rides.                                     │                                            │                   │             │
+│ 14:30–16:30 │ Vagator Beach (Anjuna-Vagator)             │ Explore the scenic red cliffs and sunset   │ 23 min / ₹200     │ free        │
+│             │ Red-cliff beach, quieter than Baga; good   │ views at Vagator Beach.                    │                   │             │
+│             │ sunset spot.                               │                                            │                   │             │
+└─────────────┴────────────────────────────────────────────┴────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast included at Candolim Palms Resort. · lunch: Baga Shoreline Shack — Seafood and Goan curries right 
+by the shore at Baga Shoreline Shack. · dinner: Anjuna Garden Kitchen — Dinner at Anjuna Garden Kitchen.
+  💤 Rest at the resort between water sports and visiting Vagator Beach.
+  • Carry sunscreen, hats, and swimwear for water activities.
+                                          Day 3 · 2027-01-12 · Historical Forts and Central Coast                                          
+┌─────────────┬────────────────────────────────────────────┬────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                   │ Why                                        │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼────────────────────────────────────────────┼────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:30–11:00 │ Fort Aguada & Lighthouse (Candolim)        │ Explore the 17th-century Portuguese Fort   │ -                 │ ₹100        │
+│             │ 17th-century Portuguese fort and           │ Aguada and its historic lighthouse located │                   │             │
+│             │ lighthouse above the Mandovi estuary.      │ right in Candolim.                         │                   │             │
+└─────────────┴────────────────────────────────────────────┴────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast at Candolim Palms Resort. · lunch: Candolim Pure Veg Bhojanalaya — Lunch at Candolim Pure Veg 
+Bhojanalaya. · dinner: Baga Shoreline Shack — Dinner near the beach in North Goa.
+  💤 Afternoon rest at the hotel pool to avoid peak midday heat.
+  • Walking shoes recommended for exploring Fort Aguada.
+Day 4 · 2027-01-13 · Departure — no activities
+  🍽  breakfast: hotel/casual — Early breakfast at Candolim Palms Resort before checkout.
+  💤 None, preparing for departure.
+  • Ensure all belongings are packed before heading to Goa Airport for the return flight.
+Weather CLIMATE: avg 21.5–33.6°C, 0.0 mm rain/day, rainy days 0%
+                      Cost breakdown (computed, not model-generated)                      
+┌─────────────────┬──────────────────────────────────────────────────┬────────┬──────────┐
+│ Category        │ Item                                             │ Amount │ Source   │
+├─────────────────┼──────────────────────────────────────────────────┼────────┼──────────┤
+│ transport       │ Flight Demo Airways BOM→GOI 2027-01-10 11:40 × 2 │ ₹5,600 │ MOCK     │
+│ transport       │ Flight Demo Airways GOI→BOM 2027-01-13 11:40 × 2 │ ₹6,300 │ MOCK     │
+│ accommodation   │ Candolim Palms Resort × 3 nights × 1 room(s)     │ ₹9,600 │ MOCK     │
+│ transport       │ Airport → hotel taxi                             │ ₹460   │ ESTIMATE │
+│ transport       │ Hotel → airport taxi                             │ ₹460   │ ESTIMATE │
+│ local_transport │ Day 1: taxi Candolim → Calangute-Baga            │ ₹200   │ ESTIMATE │
+│ local_transport │ Day 1: taxi back to hotel                        │ ₹200   │ ESTIMATE │
+│ meals           │ Day 1 dinner: Candolim Pure Veg Bhojanalaya × 2  │ ₹600   │ MOCK     │
+│ activities      │ Day 2: Baga Beach water sports × 2               │ ₹3,000 │ MOCK     │
+│ local_transport │ Day 2: taxi Candolim → Calangute-Baga            │ ₹200   │ ESTIMATE │
+│ local_transport │ Day 2: taxi Calangute-Baga → Anjuna-Vagator      │ ₹200   │ ESTIMATE │
+│ local_transport │ Day 2: taxi back to hotel                        │ ₹205   │ ESTIMATE │
+│ meals           │ Day 2 lunch: Baga Shoreline Shack × 2            │ ₹1,400 │ MOCK     │
+│ meals           │ Day 2 dinner: Anjuna Garden Kitchen × 2          │ ₹1,200 │ MOCK     │
+│ activities      │ Day 3: Fort Aguada & Lighthouse × 2              │ ₹100   │ MOCK     │
+│ meals           │ Day 3 lunch: Candolim Pure Veg Bhojanalaya × 2   │ ₹600   │ MOCK     │
+│ meals           │ Day 3 dinner: Baga Shoreline Shack × 2           │ ₹1,400 │ MOCK     │
+│ contingency     │ 10% contingency                                  │ ₹3,172 │ ESTIMATE │
+└─────────────────┴──────────────────────────────────────────────────┴────────┴──────────┘
+  transport          ₹12,820  ███████████
+  accommodation       ₹9,600  ████████
+  meals               ₹5,200  ████
+  contingency         ₹3,172  ███
+  activities          ₹3,100  ███
+  local_transport     ₹1,005  █
+  Total ₹34,897 · budget ₹40,000 covers whole trip: ₹31,725 → within budget
+LIVE real-time API · CLIMATE historical averages, not a forecast · MOCK simulated provider, not real prices/availability · ESTIMATE 
+computed approximation · UNAVAILABLE source failed
+Commands: flights · hotels · costs · plan · json · book (mock) · quit — anything else refines the trip.
+
+> Saved. Resume with: python main.py --resume 51e3714d

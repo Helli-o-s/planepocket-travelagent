@@ -1,0 +1,46 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.2.0, pluggy-1.7.0 -- C:\Travel\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Travel
+configfile: pytest.ini
+plugins: anyio-4.15.1, langsmith-0.14.16
+collecting ... collected 36 items
+
+tests/test_llm.py::test_quota_error_falls_back_silently_and_sticks PASSED [  2%]
+tests/test_llm.py::test_overloaded_model_also_falls_back PASSED          [  5%]
+tests/test_llm.py::test_unavailable_model_is_skipped PASSED              [  8%]
+tests/test_llm.py::test_network_error_retries_same_model PASSED          [ 11%]
+tests/test_llm.py::test_persistent_network_error_fails_cleanly PASSED    [ 13%]
+tests/test_llm.py::test_last_model_exhausted_retries_then_fails_cleanly PASSED [ 16%]
+tests/test_logic.py::test_example_request_resolves_year_and_duration PASSED [ 19%]
+tests/test_logic.py::test_missing_year_rolls_to_next_year_and_crosses_new_year PASSED [ 22%]
+tests/test_logic.py::test_questions_for_missing_and_invalid_input PASSED [ 25%]
+tests/test_logic.py::test_unstated_budget_scope_is_strict_and_visible PASSED [ 27%]
+tests/test_logic.py::test_duration_without_end_date_is_derived PASSED    [ 30%]
+tests/test_logic.py::test_flight_ids_round_trip_through_lookup PASSED    [ 33%]
+tests/test_logic.py::test_expenses_no_double_count_and_breakfast_included PASSED [ 36%]
+tests/test_logic.py::test_meals_follow_flights_and_hotel_breakfast PASSED [ 38%]
+tests/test_logic.py::test_valid_plan_has_no_errors PASSED                [ 41%]
+tests/test_logic.py::test_validator_catches_constraint_violations PASSED [ 44%]
+tests/test_logic.py::test_arrival_and_departure_buffers PASSED           [ 47%]
+tests/test_logic.py::test_tools_handle_bad_input_and_simulated_outage PASSED [ 50%]
+tests/test_logic.py::test_airport_codes_are_accepted PASSED              [ 52%]
+tests/test_logic.py::test_attraction_interest_ranking PASSED             [ 55%]
+tests/test_logic.py::test_wrong_kind_ids_are_errors_not_crashes PASSED   [ 58%]
+tests/test_logic.py::test_food_interest_is_met_by_restaurants PASSED     [ 61%]
+tests/test_scenarios.py::test_T1_normal_request PASSED                   [ 63%]
+tests/test_scenarios.py::test_T2_missing_information_asks_instead_of_planning PASSED [ 66%]
+tests/test_scenarios.py::test_T3_unsatisfiable_budget_replans_then_reports_honestly PASSED [ 69%]
+tests/test_scenarios.py::test_T4_failed_tool_degrades_gracefully PASSED  [ 72%]
+tests/test_scenarios.py::test_T5_refinement_reuses_unaffected_results PASSED [ 75%]
+tests/test_scenarios.py::test_refinement_with_invalid_change_keeps_plan PASSED [ 77%]
+tests/test_scenarios.py::test_malformed_model_output_is_repaired_once PASSED [ 80%]
+tests/test_scenarios.py::test_malformed_twice_fails_cleanly PASSED       [ 83%]
+tests/test_scenarios.py::test_hallucinated_id_is_rejected PASSED         [ 86%]
+tests/test_scenarios.py::test_injected_instructions_stay_inside_tool_data PASSED [ 88%]
+tests/test_scenarios.py::test_research_loop_is_bounded PASSED            [ 91%]
+tests/test_scenarios.py::test_saved_trip_round_trips_and_can_be_refined PASSED [ 94%]
+tests/test_scenarios.py::test_booking_is_mock_and_never_an_agent_tool PASSED [ 97%]
+tests/test_scenarios.py::test_diff_names_changed_flights PASSED          [100%]
+
+============================= 36 passed in 1.76s ==============================

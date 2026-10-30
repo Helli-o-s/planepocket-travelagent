@@ -1,0 +1,390 @@
+Agentic Travel Planner · trace: runs/0b244aee.jsonl
+LIVE real-time API · CLIMATE historical averages, not a forecast · MOCK simulated provider, not real prices/availability · ESTIMATE computed approximation · 
+UNAVAILABLE source failed
+  parsed
+  → search_flights(passengers=2, destination=Goa, origin=Indore, date=2026-12-15) MOCK 4 results
+  → search_flights(passengers=2, date=2026-12-19, origin=Goa, destination=Indore) MOCK 4 results
+  → search_hotels(tier=mid-range, city=Goa, guests=2) MOCK 4 results
+  → search_attractions(city=Goa, interests=['beaches', 'local food', 'historical attractions', 'scenic places']) MOCK 19 results
+  → search_restaurants(city=Goa) MOCK 10 results
+  → get_weather(city=Goa, start_date=2026-12-15, end_date=2026-12-19) CLIMATE historical average (not a forecast)
+  → estimate_budget(hotel_id=H-GOA-03, flight_ids=['FL-IDR-GOI-20261215-0', 'FL-GOI-IDR-20261219-2'], travellers=2, nights=4) MOCK flights+hotel = ₹32,100
+  agent: Here is a summary of the recommended flights, hotel, attractions, and restaurants for your 5-day trip from Indore to Goa (Dec 15–19, 2026) for 2 
+adults:
+
+### 1. Flights
+* **Outbound (Dec 15, 2026):** **FL-IDR-GOI-20261215-0** (MockAir) — Direct | Depart 06:10, Arrive 08:07 | ₹4,650/person (₹9,300 to
+  composed
+  ✓ validator passed: 0 errors, 0 warnings; covered ₹33,020 of ₹35,000
+┌─────────────────────────────────────────────────────────────────────────── Trip ────────────────────────────────────────────────────────────────────────────┐
+│ Indore → Goa · 15 Dec 2026 – 19 Dec 2026 (5 days) · 2 adults, 0 children · budget ₹35,000                                                                   │
+│ assumption: No year given; using the next upcoming dates (15 Dec 2026).                                                                                     │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────── Summary ──────────────────────────────────────────────────────────────────────────┐
+│ A 5-day itinerary exploring Goa's rich heritage, beaches, markets, and scenic spots, perfectly matching interests and staying comfortably within the INR    │
+│ 35,000 budget for flight and hotel.                                                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                 Flights Indore → Goa on 2026-12-15 MOCK                                  
+┌─────────────────────────┬──────────────┬────────┬────────┬──────────┬───────┬────────────┬─────────────┐
+│ ID                      │ Airline      │ Depart │ Arrive │ Duration │ Stops │ Per person │ Δ trip vs ★ │
+├─────────────────────────┼──────────────┼────────┼────────┼──────────┼───────┼────────────┼─────────────┤
+│ ★ FL-IDR-GOI-20261215-0 │ MockAir      │ 06:10  │ 08:07  │ 1h57     │ 0     │ ₹4,650     │ —           │
+│ FL-IDR-GOI-20261215-1   │ Demo Airways │ 11:40  │ 16:07  │ 4h27     │ 1     │ ₹3,750     │ -₹1,800     │
+│ FL-IDR-GOI-20261215-2   │ SkyMock      │ 15:25  │ 17:22  │ 1h57     │ 0     │ ₹5,200     │ +₹1,100     │
+│ FL-IDR-GOI-20261215-3   │ TestJet      │ 20:50  │ 22:47  │ 1h57     │ 0     │ ₹5,200     │ +₹1,100     │
+└─────────────────────────┴──────────────┴────────┴────────┴──────────┴───────┴────────────┴─────────────┘
+                                 Flights Goa → Indore on 2026-12-19 MOCK                                  
+┌─────────────────────────┬──────────────┬────────┬────────┬──────────┬───────┬────────────┬─────────────┐
+│ ID                      │ Airline      │ Depart │ Arrive │ Duration │ Stops │ Per person │ Δ trip vs ★ │
+├─────────────────────────┼──────────────┼────────┼────────┼──────────┼───────┼────────────┼─────────────┤
+│ FL-GOI-IDR-20261219-0   │ MockAir      │ 06:10  │ 08:07  │ 1h57     │ 0     │ ₹5,600     │ +₹1,200     │
+│ FL-GOI-IDR-20261219-1   │ Demo Airways │ 11:40  │ 16:07  │ 4h27     │ 1     │ ₹4,300     │ -₹1,400     │
+│ ★ FL-GOI-IDR-20261219-2 │ SkyMock      │ 15:25  │ 17:22  │ 1h57     │ 0     │ ₹5,000     │ —           │
+│ FL-GOI-IDR-20261219-3   │ TestJet      │ 20:50  │ 22:47  │ 1h57     │ 0     │ ₹5,050     │ +₹100       │
+└─────────────────────────┴──────────────┴────────┴────────┴──────────┴───────┴────────────┴─────────────┘
+                                             Hotels (tier=mid-range, city=Goa, guests=2) MOCK                                              
+┌────────────┬────────────────────────┬────────────────┬───────────┬───────────┬───────┬────────┬───────────────────────────┬─────────────┐
+│ ID         │ Name                   │ Area           │ Tier      │ Per night │ Rooms │ Rating │ Amenities                 │ Δ stay vs ★ │
+├────────────┼────────────────────────┼────────────────┼───────────┼───────────┼───────┼────────┼───────────────────────────┼─────────────┤
+│ H-GOA-05   │ Colva Sands Retreat    │ Colva-Benaulim │ mid-range │ ₹2,600    │ 1     │ 4.0    │ wifi, ac, pool            │ -₹2,400     │
+│ H-GOA-04   │ Panjim Riverside Hotel │ Panaji         │ mid-range │ ₹2,800    │ 1     │ 4.1    │ wifi, ac, breakfast, lift │ -₹1,600     │
+│ ★ H-GOA-03 │ Candolim Palms Resort  │ Candolim       │ mid-range │ ₹3,200    │ 1     │ 4.2    │ wifi, ac, pool, breakfast │ —           │
+│ H-GOA-06   │ Anjuna Cliff Stays     │ Anjuna-Vagator │ mid-range │ ₹3,600    │ 1     │ 4.3    │ wifi, ac, sea view        │ +₹1,600     │
+└────────────┴────────────────────────┴────────────────┴───────────┴───────────┴───────┴────────┴───────────────────────────┴─────────────┘
+                                                   Day 1 · 2026-12-15 · Arrival & North Goa Coastal Heritage                                                   
+┌─────────────┬──────────────────────────────────────────────────────┬──────────────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                             │ Why                                                  │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 11:00–12:30 │ Fort Aguada & Lighthouse (Candolim)                  │ Explore the historic 17th-century Portuguese         │ -                 │ ₹100        │
+│             │ 17th-century Portuguese fort and lighthouse above    │ fortress with scenic views after arriving in         │                   │             │
+│             │ the Mandovi estuary.                                 │ Candolim.                                            │                   │             │
+│ 16:30–19:00 │ Calangute Beach (Calangute-Baga)                     │ Relax at one of North Goa's most iconic beaches      │ 19 min / ₹200     │ free        │
+│             │ Goa's busiest beach; shacks, lifeguards, lively in   │ during the late afternoon.                           │                   │             │
+│             │ the evening.                                         │                                                      │                   │             │
+└─────────────┴──────────────────────────────────────────────────────┴──────────────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Light breakfast in transit after landing · lunch: Candolim Pure Veg Bhojanalaya — Enjoy North and South Indian vegetarian lunch 
+in Candolim · dinner: Baga Shoreline Shack — Sample fresh seafood and Goan curries by the beach
+  💤 Afternoon rest and check-in at Candolim Palms Resort from 14:00 to 16:00.
+  • Wear comfortable walking shoes for Fort Aguada.
+  • Keep hydrated as daytime temperatures reach around 34°C.
+                                                   Day 2 · 2026-12-16 · Anjuna & Vagator Culture and Sunsets                                                   
+┌─────────────┬──────────────────────────────────────────────────────┬──────────────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                             │ Why                                                  │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:30–12:00 │ Anjuna Flea Market (Anjuna-Vagator)                  │ Visit the famous Wednesday market for vibrant local  │ 32 min / ₹205     │ free        │
+│             │ Weekly Wednesday market with crafts, clothes and     │ culture and artisan crafts.                          │                   │             │
+│             │ snack stalls.                                        │                                                      │                   │             │
+│ 15:45–17:15 │ Chapora Fort (Anjuna-Vagator)                        │ Climb up the historical ruined fort for panoramic    │ -                 │ free        │
+│             │ Ruined Portuguese hilltop fort; steep uphill path,   │ coastline views.                                     │                   │             │
+│             │ sweeping views over Vagator.                         │                                                      │                   │             │
+│ 17:30–19:30 │ Vagator Beach (Anjuna-Vagator)                       │ Catch a picturesque Goan sunset against the red      │ -                 │ free        │
+│             │ Red-cliff beach, quieter than Baga; good sunset      │ cliffs of Vagator.                                   │                   │             │
+│             │ spot.                                                │                                                      │                   │             │
+└─────────────┴──────────────────────────────────────────────────────┴──────────────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast at Candolim Palms Resort · lunch: Anjuna Garden Kitchen — Savor Goan dishes and fresh bowls in an outdoor garden 
+setting · dinner: Anjuna Garden Kitchen — Relaxed evening dining with local specialties in Anjuna
+  💤 Midday rest at hotel or shade between 13:30 and 15:30 to avoid peak sunshine.
+  • Bring sun protection and sunglasses for the fort hike.
+  • Wednesday flea market requires light walking; carry cash for vendors.
+                                                  Day 3 · 2026-12-17 · Old Goa Heritage & Panaji River Cruise                                                  
+┌─────────────┬──────────────────────────────────────────────────────┬──────────────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                             │ Why                                                  │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:30–10:30 │ Basilica of Bom Jesus (Old Goa)                      │ Discover UNESCO World Heritage baroque architecture  │ 57 min / ₹436     │ free        │
+│             │ UNESCO-listed baroque church holding St. Francis     │ and St. Francis Xavier's relics.                     │                   │             │
+│             │ Xavier's relics.                                     │                                                      │                   │             │
+│ 10:35–11:20 │ Se Cathedral (Old Goa)                               │ Visit one of Asia's largest cathedrals located       │ -                 │ free        │
+│             │ One of Asia's largest churches, opposite the         │ directly opposite the Basilica.                      │                   │             │
+│             │ Basilica.                                            │                                                      │                   │             │
+│ 17:30–18:30 │ Mandovi River sunset cruise (Panaji)                 │ Enjoy Goan folk music, dance, and river scenery on a │ 36 min / ₹242     │ ₹1,000      │
+│             │ One-hour boat cruise with Goan folk music and dance. │ sunset cruise.                                       │                   │             │
+└─────────────┴──────────────────────────────────────────────────────┴──────────────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast at Candolim Palms Resort · lunch: Panjim Thali House — Authentic Goan fish and veg thali in Panaji · dinner: Panjim 
+Thali House — Traditional Goan cuisine in Panaji town
+  💤 Relaxation period at hotel or café between 14:00 and 16:30 before the evening river cruise.
+  • Dress modestly when visiting active religious monuments in Old Goa.
+  • Arrive 15 minutes prior to the cruise departure time at Panaji jetty.
+                                                   Day 4 · 2026-12-18 · Local Markets & Scenic Promontories                                                    
+┌─────────────┬──────────────────────────────────────────────────────┬──────────────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                             │ Why                                                  │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:30–11:30 │ Mapusa Friday Market (Mapusa)                        │ Experience the lively traditional Friday market      │ 38 min / ₹265     │ free        │
+│             │ Local produce, spices, Goan sausages and sweets;     │ featuring local produce, spices, and Goan treats.    │                   │             │
+│             │ Fridays only.                                        │                                                      │                   │             │
+│ 16:30–17:30 │ Dona Paula Viewpoint (Dona Paula)                    │ Take in scenic coastal views where the Mandovi and   │ 55 min / ₹416     │ free        │
+│             │ Promontory where the Mandovi and Zuari rivers meet   │ Zuari rivers meet the sea.                           │                   │             │
+│             │ the sea.                                             │                                                      │                   │             │
+└─────────────┴──────────────────────────────────────────────────────┴──────────────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast at Candolim Palms Resort · lunch: Mapusa Market Snack Stalls — Sample local market street food like ros omelette and 
+patties · dinner: Dona Paula Seaside Grill — Dine on Goan curries and grills overlooking the sea in Dona Paula
+  💤 Midday rest at Candolim Palms Resort from 13:30 to 15:30.
+  • Mapusa market can be crowded; keep personal items secure.
+  • Great photo opportunities at Dona Paula viewpoint near golden hour.
+                                                     Day 5 · 2026-12-19 · Latin Quarter Stroll & Departure                                                     
+┌─────────────┬──────────────────────────────────────────────────────┬──────────────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                             │ Why                                                  │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:00–11:00 │ Fontainhas Latin Quarter walk (Panaji)               │ Stroll through colourful Portuguese-era lanes and    │ 31 min / ₹200     │ free        │
+│             │ Colourful Portuguese-era lanes, bakeries and cafés;  │ heritage architecture in Panaji before departure.    │                   │             │
+│             │ best explored on foot.                               │                                                      │                   │             │
+└─────────────┴──────────────────────────────────────────────────────┴──────────────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast at Candolim Palms Resort · lunch: Fontainhas Bakery Café — Enjoy coffee, light bakes, and sandwiches at Fontainhas 
+Bakery Café · dinner: hotel/casual — In-flight meal or evening dinner upon return to Indore
+  💤 Short break at café in Panaji before departing for Goa Airport.
+  • Ensure checkout from resort is completed by 08:30.
+  • Allow sufficient travel time to Goa Airport to arrive 2 hours before flight.
+Weather CLIMATE: avg 20.6–33.8°C, 0.0 mm rain/day, rainy days 0%
+                     Cost breakdown (computed, not model-generated)                      
+┌─────────────────┬────────────────────────────────────────────────┬─────────┬──────────┐
+│ Category        │ Item                                           │ Amount  │ Source   │
+├─────────────────┼────────────────────────────────────────────────┼─────────┼──────────┤
+│ transport       │ Flight MockAir IDR→GOI 2026-12-15 06:10 × 2    │ ₹9,300  │ MOCK     │
+│ transport       │ Flight SkyMock GOI→IDR 2026-12-19 15:25 × 2    │ ₹10,000 │ MOCK     │
+│ accommodation   │ Candolim Palms Resort × 4 nights × 1 room(s)   │ ₹12,800 │ MOCK     │
+│ transport       │ Airport → hotel taxi                           │ ₹460    │ ESTIMATE │
+│ transport       │ Hotel → airport taxi                           │ ₹460    │ ESTIMATE │
+│ activities      │ Day 1: Fort Aguada & Lighthouse × 2            │ ₹100    │ MOCK     │
+│ local_transport │ Day 1: taxi Candolim → Calangute-Baga          │ ₹200    │ ESTIMATE │
+│ local_transport │ Day 1: taxi back to hotel                      │ ₹200    │ ESTIMATE │
+│ meals           │ Day 1 lunch: Candolim Pure Veg Bhojanalaya × 2 │ ₹600    │ MOCK     │
+│ meals           │ Day 1 dinner: Baga Shoreline Shack × 2         │ ₹1,400  │ MOCK     │
+│ local_transport │ Day 2: taxi Candolim → Anjuna-Vagator          │ ₹205    │ ESTIMATE │
+│ local_transport │ Day 2: taxi back to hotel                      │ ₹205    │ ESTIMATE │
+│ meals           │ Day 2 lunch: Anjuna Garden Kitchen × 2         │ ₹1,200  │ MOCK     │
+│ meals           │ Day 2 dinner: Anjuna Garden Kitchen × 2        │ ₹1,200  │ MOCK     │
+│ local_transport │ Day 3: taxi Candolim → Old Goa                 │ ₹436    │ ESTIMATE │
+│ activities      │ Day 3: Mandovi River sunset cruise × 2         │ ₹1,000  │ MOCK     │
+│ local_transport │ Day 3: taxi Old Goa → Panaji                   │ ₹242    │ ESTIMATE │
+│ local_transport │ Day 3: taxi back to hotel                      │ ₹200    │ ESTIMATE │
+│ meals           │ Day 3 lunch: Panjim Thali House × 2            │ ₹900    │ MOCK     │
+│ meals           │ Day 3 dinner: Panjim Thali House × 2           │ ₹900    │ MOCK     │
+│ local_transport │ Day 4: taxi Candolim → Mapusa                  │ ₹265    │ ESTIMATE │
+│ local_transport │ Day 4: taxi Mapusa → Dona Paula                │ ₹416    │ ESTIMATE │
+│ local_transport │ Day 4: taxi back to hotel                      │ ₹225    │ ESTIMATE │
+│ meals           │ Day 4 lunch: Mapusa Market Snack Stalls × 2    │ ₹300    │ MOCK     │
+│ meals           │ Day 4 dinner: Dona Paula Seaside Grill × 2     │ ₹1,300  │ MOCK     │
+│ local_transport │ Day 5: taxi Candolim → Panaji                  │ ₹200    │ ESTIMATE │
+│ local_transport │ Day 5: taxi back to hotel                      │ ₹200    │ ESTIMATE │
+│ meals           │ Day 5 lunch: Fontainhas Bakery Café × 2        │ ₹700    │ MOCK     │
+│ meals           │ Day 5 dinner (estimate) × 2                    │ ₹1,000  │ ESTIMATE │
+│ contingency     │ 10% contingency                                │ ₹4,661  │ ESTIMATE │
+└─────────────────┴────────────────────────────────────────────────┴─────────┴──────────┘
+  transport          ₹20,220  ████████████
+  accommodation      ₹12,800  ███████
+  meals               ₹9,500  ██████
+  contingency         ₹4,661  ███
+  local_transport     ₹2,994  ██
+  activities          ₹1,100  █
+  Total ₹51,275 · budget ₹35,000 covers transport + accommodation: ₹33,020 → within budget
+LIVE real-time API · CLIMATE historical averages, not a forecast · MOCK simulated provider, not real prices/availability · ESTIMATE computed approximation · 
+UNAVAILABLE source failed
+Commands: flights · hotels · costs · plan · json · quit — anything else refines the trip.
+
+>   change: Updated hotel preference to budget tier. → re-search ['hotel']
+  → search_hotels(tier=budget, guests=2, city=Goa) MOCK 3 results
+  → estimate_budget(nights=4, travellers=2, hotel_id=H-GOA-02, flight_ids=['FL-IDR-GOI-20261215-0', 'FL-GOI-IDR-20261219-2']) MOCK flights+hotel = ₹26,900
+  → estimate_budget(nights=4, flight_ids=['FL-IDR-GOI-20261215-0', 'FL-GOI-IDR-20261219-2'], travellers=2, hotel_id=H-GOA-01) MOCK flights+hotel = ₹24,900
+  agent: Here is the summary of updated options for your trip to Goa:
+
+### **Selected/Confirmed Flights**
+* **Outbound Flight:** `FL-IDR-GOI-20261215-0` (Indore to Goa)
+* **Return Flight:** `FL-GOI-IDR-20261219-2` (Goa to Indore)
+* **Total Flight Cost (2 passengers):** ₹19,300
+
+---
+
+### **Budget Hotel Option
+C:\DA_Uploads\.venv\Lib\site-packages\langchain_google_genai\chat_models.py:3919: UserWarning: Model 'gemini-3.5-flash-lite' uses fixed sampling defaults; the sampling parameter(s) temperature will be ignored.
+  request = self._build_request_config(
+  composed
+  ✓ validator passed: 0 errors, 0 warnings; covered ₹27,978 of ₹35,000
+┌─────────────────────────────────────────────────────────────────────────── Trip ────────────────────────────────────────────────────────────────────────────┐
+│ Indore → Goa · 15 Dec 2026 – 19 Dec 2026 (5 days) · 2 adults, 0 children · budget ₹35,000                                                                   │
+│                                                                                                                                                             │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────── Summary ──────────────────────────────────────────────────────────────────────────┐
+│ A 5-day itinerary exploring Goa's rich heritage, beaches, markets, and scenic spots with updated budget accommodation at Baga Breeze Guesthouse, staying    │
+│ comfortably within the INR 35,000 budget.                                                                                                                   │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+                                 Flights Indore → Goa on 2026-12-15 MOCK                                  
+┌─────────────────────────┬──────────────┬────────┬────────┬──────────┬───────┬────────────┬─────────────┐
+│ ID                      │ Airline      │ Depart │ Arrive │ Duration │ Stops │ Per person │ Δ trip vs ★ │
+├─────────────────────────┼──────────────┼────────┼────────┼──────────┼───────┼────────────┼─────────────┤
+│ ★ FL-IDR-GOI-20261215-0 │ MockAir      │ 06:10  │ 08:07  │ 1h57     │ 0     │ ₹4,650     │ —           │
+│ FL-IDR-GOI-20261215-1   │ Demo Airways │ 11:40  │ 16:07  │ 4h27     │ 1     │ ₹3,750     │ -₹1,800     │
+│ FL-IDR-GOI-20261215-2   │ SkyMock      │ 15:25  │ 17:22  │ 1h57     │ 0     │ ₹5,200     │ +₹1,100     │
+│ FL-IDR-GOI-20261215-3   │ TestJet      │ 20:50  │ 22:47  │ 1h57     │ 0     │ ₹5,200     │ +₹1,100     │
+└─────────────────────────┴──────────────┴────────┴────────┴──────────┴───────┴────────────┴─────────────┘
+                                 Flights Goa → Indore on 2026-12-19 MOCK                                  
+┌─────────────────────────┬──────────────┬────────┬────────┬──────────┬───────┬────────────┬─────────────┐
+│ ID                      │ Airline      │ Depart │ Arrive │ Duration │ Stops │ Per person │ Δ trip vs ★ │
+├─────────────────────────┼──────────────┼────────┼────────┼──────────┼───────┼────────────┼─────────────┤
+│ FL-GOI-IDR-20261219-0   │ MockAir      │ 06:10  │ 08:07  │ 1h57     │ 0     │ ₹5,600     │ +₹1,200     │
+│ FL-GOI-IDR-20261219-1   │ Demo Airways │ 11:40  │ 16:07  │ 4h27     │ 1     │ ₹4,300     │ -₹1,400     │
+│ ★ FL-GOI-IDR-20261219-2 │ SkyMock      │ 15:25  │ 17:22  │ 1h57     │ 0     │ ₹5,000     │ —           │
+│ FL-GOI-IDR-20261219-3   │ TestJet      │ 20:50  │ 22:47  │ 1h57     │ 0     │ ₹5,050     │ +₹100       │
+└─────────────────────────┴──────────────┴────────┴────────┴──────────┴───────┴────────────┴─────────────┘
+                                            Hotels (tier=mid-range, city=Goa, guests=2) MOCK                                             
+┌──────────┬────────────────────────┬────────────────┬───────────┬───────────┬───────┬────────┬───────────────────────────┬─────────────┐
+│ ID       │ Name                   │ Area           │ Tier      │ Per night │ Rooms │ Rating │ Amenities                 │ Δ stay vs ★ │
+├──────────┼────────────────────────┼────────────────┼───────────┼───────────┼───────┼────────┼───────────────────────────┼─────────────┤
+│ H-GOA-05 │ Colva Sands Retreat    │ Colva-Benaulim │ mid-range │ ₹2,600    │ 1     │ 4.0    │ wifi, ac, pool            │ +₹2,800     │
+│ H-GOA-04 │ Panjim Riverside Hotel │ Panaji         │ mid-range │ ₹2,800    │ 1     │ 4.1    │ wifi, ac, breakfast, lift │ +₹3,600     │
+│ H-GOA-03 │ Candolim Palms Resort  │ Candolim       │ mid-range │ ₹3,200    │ 1     │ 4.2    │ wifi, ac, pool, breakfast │ +₹5,200     │
+│ H-GOA-06 │ Anjuna Cliff Stays     │ Anjuna-Vagator │ mid-range │ ₹3,600    │ 1     │ 4.3    │ wifi, ac, sea view        │ +₹6,800     │
+└──────────┴────────────────────────┴────────────────┴───────────┴───────────┴───────┴────────┴───────────────────────────┴─────────────┘
+                                      Hotels (tier=budget, guests=2, city=Goa) MOCK                                       
+┌────────────┬──────────────────────────┬────────────────┬────────┬───────────┬───────┬────────┬───────────┬─────────────┐
+│ ID         │ Name                     │ Area           │ Tier   │ Per night │ Rooms │ Rating │ Amenities │ Δ stay vs ★ │
+├────────────┼──────────────────────────┼────────────────┼────────┼───────────┼───────┼────────┼───────────┼─────────────┤
+│ H-GOA-01   │ Calangute Backpacker Inn │ Calangute-Baga │ budget │ ₹1,400    │ 1     │ 3.6    │ wifi      │ -₹2,000     │
+│ ★ H-GOA-02 │ Baga Breeze Guesthouse   │ Calangute-Baga │ budget │ ₹1,900    │ 1     │ 3.9    │ wifi, ac  │ —           │
+│ H-GOA-08   │ Palolem Eco Huts         │ Palolem        │ budget │ ₹2,200    │ 1     │ 4.0    │ sea view  │ +₹1,200     │
+└────────────┴──────────────────────────┴────────────────┴────────┴───────────┴───────┴────────┴───────────┴─────────────┘
+                                                   Day 1 · 2026-12-15 · Arrival & North Goa Coastal Heritage                                                   
+┌─────────────┬──────────────────────────────────────────────────────┬──────────────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                             │ Why                                                  │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 11:00–12:30 │ Fort Aguada & Lighthouse (Candolim)                  │ Explore the historic 17th-century Portuguese         │ 19 min / ₹200     │ ₹100        │
+│             │ 17th-century Portuguese fort and lighthouse above    │ fortress with scenic views after arriving in         │                   │             │
+│             │ the Mandovi estuary.                                 │ Candolim.                                            │                   │             │
+│ 16:30–19:00 │ Calangute Beach (Calangute-Baga)                     │ Relax at one of North Goa's most iconic beaches      │ 19 min / ₹200     │ free        │
+│             │ Goa's busiest beach; shacks, lifeguards, lively in   │ during the late afternoon.                           │                   │             │
+│             │ the evening.                                         │                                                      │                   │             │
+└─────────────┴──────────────────────────────────────────────────────┴──────────────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Light breakfast in transit after landing · lunch: Candolim Pure Veg Bhojanalaya — Enjoy North and South Indian vegetarian lunch 
+in Candolim · dinner: Baga Shoreline Shack — Sample fresh seafood and Goan curries by the beach
+  💤 Afternoon rest and check-in at Baga Breeze Guesthouse from 14:00 to 16:00.
+  • Wear comfortable walking shoes for Fort Aguada.
+  • Keep hydrated as daytime temperatures reach around 34°C.
+                                                   Day 2 · 2026-12-16 · Anjuna & Vagator Culture and Sunsets                                                   
+┌─────────────┬──────────────────────────────────────────────────────┬──────────────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                             │ Why                                                  │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:30–12:00 │ Anjuna Flea Market (Anjuna-Vagator)                  │ Visit the famous Wednesday market for vibrant local  │ 23 min / ₹200     │ free        │
+│             │ Weekly Wednesday market with crafts, clothes and     │ culture and artisan crafts.                          │                   │             │
+│             │ snack stalls.                                        │                                                      │                   │             │
+│ 15:45–17:15 │ Chapora Fort (Anjuna-Vagator)                        │ Climb up the historical ruined fort for panoramic    │ -                 │ free        │
+│             │ Ruined Portuguese hilltop fort; steep uphill path,   │ coastline views.                                     │                   │             │
+│             │ sweeping views over Vagator.                         │                                                      │                   │             │
+│ 17:30–19:30 │ Vagator Beach (Anjuna-Vagator)                       │ Catch a picturesque Goan sunset against the red      │ -                 │ free        │
+│             │ Red-cliff beach, quieter than Baga; good sunset      │ cliffs of Vagator.                                   │                   │             │
+│             │ spot.                                                │                                                      │                   │             │
+└─────────────┴──────────────────────────────────────────────────────┴──────────────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast at Baga Breeze Guesthouse · lunch: Anjuna Garden Kitchen — Savor Goan dishes and fresh bowls in an outdoor garden 
+setting · dinner: Anjuna Garden Kitchen — Relaxed evening dining with local specialties in Anjuna
+  💤 Midday rest at hotel or shade between 13:30 and 15:30 to avoid peak sunshine.
+  • Bring sun protection and sunglasses for the fort hike.
+  • Wednesday flea market requires light walking; carry cash for vendors.
+                                                  Day 3 · 2026-12-17 · Old Goa Heritage & Panaji River Cruise                                                  
+┌─────────────┬──────────────────────────────────────────────────────┬──────────────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                             │ Why                                                  │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:30–10:30 │ Basilica of Bom Jesus (Old Goa)                      │ Discover UNESCO World Heritage baroque architecture  │ 60 min / ₹470     │ free        │
+│             │ UNESCO-listed baroque church holding St. Francis     │ and St. Francis Xavier's relics.                     │                   │             │
+│             │ Xavier's relics.                                     │                                                      │                   │             │
+│ 10:35–11:20 │ Se Cathedral (Old Goa)                               │ Visit one of Asia's largest cathedrals located       │ -                 │ free        │
+│             │ One of Asia's largest churches, opposite the         │ directly opposite the Basilica.                      │                   │             │
+│             │ Basilica.                                            │                                                      │                   │             │
+│ 17:30–18:30 │ Mandovi River sunset cruise (Panaji)                 │ Enjoy Goan folk music, dance, and river scenery on a │ 36 min / ₹242     │ ₹1,000      │
+│             │ One-hour boat cruise with Goan folk music and dance. │ sunset cruise.                                       │                   │             │
+└─────────────┴──────────────────────────────────────────────────────┴──────────────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast at Baga Breeze Guesthouse · lunch: Panjim Thali House — Authentic Goan fish and veg thali in Panaji · dinner: Panjim 
+Thali House — Traditional Goan cuisine in Panaji town
+  💤 Relaxation period at hotel or café between 14:00 and 16:30 before the evening river cruise.
+  • Dress modestly when visiting active religious monuments in Old Goa.
+  • Arrive 15 minutes prior to the cruise departure time at Panaji jetty.
+                                                   Day 4 · 2026-12-18 · Local Markets & Scenic Promontories                                                    
+┌─────────────┬──────────────────────────────────────────────────────┬──────────────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                             │ Why                                                  │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:30–11:30 │ Mapusa Friday Market (Mapusa)                        │ Experience the lively traditional Friday market      │ 33 min / ₹216     │ free        │
+│             │ Local produce, spices, Goan sausages and sweets;     │ featuring local produce, spices, and Goan treats.    │                   │             │
+│             │ Fridays only.                                        │                                                      │                   │             │
+│ 16:30–17:30 │ Dona Paula Viewpoint (Dona Paula)                    │ Take in scenic coastal views where the Mandovi and   │ 55 min / ₹416     │ free        │
+│             │ Promontory where the Mandovi and Zuari rivers meet   │ Zuari rivers meet the sea.                           │                   │             │
+│             │ the sea.                                             │                                                      │                   │             │
+└─────────────┴──────────────────────────────────────────────────────┴──────────────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast at Baga Breeze Guesthouse · lunch: Mapusa Market Snack Stalls — Sample local market street food like ros omelette and 
+patties · dinner: Dona Paula Seaside Grill — Dine on Goan curries and grills overlooking the sea in Dona Paula
+  💤 Midday rest at Baga Breeze Guesthouse from 13:30 to 15:30.
+  • Mapusa market can be crowded; keep personal items secure.
+  • Great photo opportunities at Dona Paula viewpoint near golden hour.
+                                                     Day 5 · 2026-12-19 · Latin Quarter Stroll & Departure                                                     
+┌─────────────┬──────────────────────────────────────────────────────┬──────────────────────────────────────────────────────┬───────────────────┬─────────────┐
+│ Time        │ Activity                                             │ Why                                                  │ Travel (ESTIMATE) │ Cost (MOCK) │
+├─────────────┼──────────────────────────────────────────────────────┼──────────────────────────────────────────────────────┼───────────────────┼─────────────┤
+│ 09:00–11:00 │ Fontainhas Latin Quarter walk (Panaji)               │ Stroll through colourful Portuguese-era lanes and    │ 37 min / ₹249     │ free        │
+│             │ Colourful Portuguese-era lanes, bakeries and cafés;  │ heritage architecture in Panaji before departure.    │                   │             │
+│             │ best explored on foot.                               │                                                      │                   │             │
+└─────────────┴──────────────────────────────────────────────────────┴──────────────────────────────────────────────────────┴───────────────────┴─────────────┘
+  🍽  breakfast: hotel/casual — Breakfast at Baga Breeze Guesthouse · lunch: Fontainhas Bakery Café — Enjoy coffee, light bakes, and sandwiches at Fontainhas 
+Bakery Café · dinner: hotel/casual — In-flight meal or evening dinner upon return to Indore
+  💤 Short break at café in Panaji before departing for Goa Airport.
+  • Ensure checkout from guesthouse is completed by 08:30.
+  • Allow sufficient travel time to Goa Airport to arrive 2 hours before flight.
+Weather CLIMATE: avg 20.6–33.8°C, 0.0 mm rain/day, rainy days 0%
+                     Cost breakdown (computed, not model-generated)                      
+┌─────────────────┬────────────────────────────────────────────────┬─────────┬──────────┐
+│ Category        │ Item                                           │ Amount  │ Source   │
+├─────────────────┼────────────────────────────────────────────────┼─────────┼──────────┤
+│ transport       │ Flight MockAir IDR→GOI 2026-12-15 06:10 × 2    │ ₹9,300  │ MOCK     │
+│ transport       │ Flight SkyMock GOI→IDR 2026-12-19 15:25 × 2    │ ₹10,000 │ MOCK     │
+│ accommodation   │ Baga Breeze Guesthouse × 4 nights × 1 room(s)  │ ₹7,600  │ MOCK     │
+│ transport       │ Airport → hotel taxi                           │ ₹539    │ ESTIMATE │
+│ transport       │ Hotel → airport taxi                           │ ₹539    │ ESTIMATE │
+│ activities      │ Day 1: Fort Aguada & Lighthouse × 2            │ ₹100    │ MOCK     │
+│ local_transport │ Day 1: taxi Calangute-Baga → Candolim          │ ₹200    │ ESTIMATE │
+│ local_transport │ Day 1: taxi Candolim → Calangute-Baga          │ ₹200    │ ESTIMATE │
+│ meals           │ Day 1 breakfast (estimate) × 2                 │ ₹400    │ ESTIMATE │
+│ meals           │ Day 1 lunch: Candolim Pure Veg Bhojanalaya × 2 │ ₹600    │ MOCK     │
+│ meals           │ Day 1 dinner: Baga Shoreline Shack × 2         │ ₹1,400  │ MOCK     │
+│ local_transport │ Day 2: taxi Calangute-Baga → Anjuna-Vagator    │ ₹200    │ ESTIMATE │
+│ local_transport │ Day 2: taxi back to hotel                      │ ₹200    │ ESTIMATE │
+│ meals           │ Day 2 breakfast (estimate) × 2                 │ ₹400    │ ESTIMATE │
+│ meals           │ Day 2 lunch: Anjuna Garden Kitchen × 2         │ ₹1,200  │ MOCK     │
+│ meals           │ Day 2 dinner: Anjuna Garden Kitchen × 2        │ ₹1,200  │ MOCK     │
+│ local_transport │ Day 3: taxi Calangute-Baga → Old Goa           │ ₹470    │ ESTIMATE │
+│ activities      │ Day 3: Mandovi River sunset cruise × 2         │ ₹1,000  │ MOCK     │
+│ local_transport │ Day 3: taxi Old Goa → Panaji                   │ ₹242    │ ESTIMATE │
+│ local_transport │ Day 3: taxi back to hotel                      │ ₹249    │ ESTIMATE │
+│ meals           │ Day 3 breakfast (estimate) × 2                 │ ₹400    │ ESTIMATE │
+│ meals           │ Day 3 lunch: Panjim Thali House × 2            │ ₹900    │ MOCK     │
+│ meals           │ Day 3 dinner: Panjim Thali House × 2           │ ₹900    │ MOCK     │
+│ local_transport │ Day 4: taxi Calangute-Baga → Mapusa            │ ₹216    │ ESTIMATE │
+│ local_transport │ Day 4: taxi Mapusa → Dona Paula                │ ₹416    │ ESTIMATE │
+│ local_transport │ Day 4: taxi back to hotel                      │ ₹302    │ ESTIMATE │
+│ meals           │ Day 4 breakfast (estimate) × 2                 │ ₹400    │ ESTIMATE │
+│ meals           │ Day 4 lunch: Mapusa Market Snack Stalls × 2    │ ₹300    │ MOCK     │
+│ meals           │ Day 4 dinner: Dona Paula Seaside Grill × 2     │ ₹1,300  │ MOCK     │
+│ local_transport │ Day 5: taxi Calangute-Baga → Panaji            │ ₹249    │ ESTIMATE │
+│ local_transport │ Day 5: taxi back to hotel                      │ ₹249    │ ESTIMATE │
+│ meals           │ Day 5 breakfast (estimate) × 2                 │ ₹400    │ ESTIMATE │
+│ meals           │ Day 5 lunch: Fontainhas Bakery Café × 2        │ ₹700    │ MOCK     │
+│ meals           │ Day 5 dinner (estimate) × 2                    │ ₹1,000  │ ESTIMATE │
+│ contingency     │ 10% contingency                                │ ₹4,377  │ ESTIMATE │
+└─────────────────┴────────────────────────────────────────────────┴─────────┴──────────┘
+  transport          ₹20,378  █████████████
+  meals              ₹11,500  ███████
+  accommodation       ₹7,600  █████
+  contingency         ₹4,377  ███
+  local_transport     ₹3,193  ██
+  activities          ₹1,100  █
+  Total ₹48,148 · budget ₹35,000 covers transport + accommodation: ₹27,978 → within budget
+LIVE real-time API · CLIMATE historical averages, not a forecast · MOCK simulated provider, not real prices/availability · ESTIMATE computed approximation · 
+UNAVAILABLE source failed
+       What changed: Updated hotel preference to budget tier.       
+┌─────────────────┬───────────────────────┬────────────────────────┐
+│                 │ Before                │ After                  │
+├─────────────────┼───────────────────────┼────────────────────────┤
+│ hotel_tier      │ mid-range             │ budget                 │
+│ hotel           │ Candolim Palms Resort │ Baga Breeze Guesthouse │
+│ accommodation   │ ₹12,800               │ ₹7,600 (-₹5,200)       │
+│ contingency     │ ₹4,661                │ ₹4,377 (-₹284)         │
+│ local_transport │ ₹2,994                │ ₹3,193 (+₹199)         │
+│ meals           │ ₹9,500                │ ₹11,500 (+₹2,000)      │
+│ transport       │ ₹20,220               │ ₹20,378 (+₹158)        │
+│ total           │ ₹51,275               │ ₹48,148 (-₹3,127)      │
+└─────────────────┴───────────────────────┴────────────────────────┘
+
+> 
